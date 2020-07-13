@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #eed8c0;
 }
 
 .App-logo {
@@ -35,4 +36,122 @@
   to {
     transform: rotate(360deg);
   }
+}
+.my-element {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: bounce;
+  animation-duration: 2s; 
+}
+body{
+  background-color: #eed8c0;
+}
+h2{
+  text-align: left ;
+  margin-left: 100px;
+  padding-bottom: 20px;
+}
+/* Banner */
+
+.banner{
+  background-image: url("https://i.pinimg.com/originals/1a/3c/12/1a3c12fb3e9bee6ef997cf294a2e6214.jpg");
+  min-height: 100px;
+  width: 100%;
+  padding-bottom: 300px;
+  margin-bottom: 80px;
+}
+.card{
+  margin-bottom: 80px;
+  background-color: #eed8c0 !important; 
+  border: none;
+}
+.card-info {
+  
+  border: 1px solid #484848;
+  width: 300px;
+  min-height: 100px;
+  justify-content: center;
+  margin: 5px 0 0 26px ;
+  border-radius: 10px;
+ 
+}
+.animation-img img{
+  border-radius: 10px;
+}
+.card-info-flex{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.banner h1{
+  padding-top: 300px;
+  color: #1b87af;
+}
+.banner input{
+  border-radius: 10px;
+  border: none;
+  width: 500px;
+  height: 50px;
+  
+}
+.fa-search{
+ font-size: larger;
+  margin-left: -50px;
+}
+
+/* District */
+.district h2{
+  color: #209ecc;
+}
+.popular p{
+  margin: -30px  0 0 10px ;
+
+  color: white;
+}
+.district{
+  
+  margin-bottom: 80px;
+}
+.district img{
+  border-radius: 5px;
+}
+/* Footer */
+
+.footer{
+  background-color: black;
+  min-height: 100px;
+  text-align: left;
+  color: #7c7e83;
+  padding-bottom: 100px;
+  
+}
+.footer p{
+  font-size: 14px;
+  text-align: left;
+
+}
+.contact-footer{
+  margin-top: 30px;
+}
+.contact-footer i{
+  margin-right: 20px;
+}
+.gallery-footer{
+  margin-top: 30px;
+}
+.subscribe-footer{
+  margin-top: 30px;
+}
+.subscribe-footer .btn-primary {
+  margin-top: 15px;
+}
+.subscribe-footer input{
+  border-radius: 5px;
+  height: 50px;
+}
+.gallery-footer img{
+  margin-left: 15px;
+  margin-top: 15px;
 }
