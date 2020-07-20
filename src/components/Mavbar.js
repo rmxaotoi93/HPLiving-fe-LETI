@@ -8,7 +8,9 @@ import {
   Button,
   Modal,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import PostHouse from "./PostHouse";
+import Signup from "./Signup";
 
 export default function Mavbar() {
   const [show, setShow] = useState(false);
@@ -16,19 +18,32 @@ export default function Mavbar() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [show2, setShow2] = useState(false);
+
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto"></Nav>
           <Nav>
-            <Nav.Link href="#host" onClick={handleShow}>
-              Posting
+            <Nav.Link>
+              <Link to="/" onClick={handleShow}>
+                Posting
+              </Link>
             </Nav.Link>
-            <Nav.Link href="#">Blog</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link>
+              <Link to="/" onClick={handleShow2}>
+                Signup
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/login">Login</Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -39,6 +54,14 @@ export default function Mavbar() {
         </Modal.Header>
         <Modal.Body>
           <PostHouse />
+        </Modal.Body>
+        <Modal.Footer></Modal.Footer>
+      </Modal>
+
+      <Modal show={show2} onHide={handleClose2}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <Signup />
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>

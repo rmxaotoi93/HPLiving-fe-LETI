@@ -6,7 +6,7 @@ export default function Banner() {
       <div className="banner1">
         <h1>Discover a place you'll love to live</h1>
         <input placeholder="find house by location, district..." />
-        <i class="fas fa-search"></i>
+        <i classname="fas fa-search"></i>
       </div>
     </div>
   );

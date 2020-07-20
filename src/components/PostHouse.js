@@ -9,6 +9,7 @@ export default function PostHouse() {
   const [price, setPrice] = useState(0);
   const [status, setStatus] = useState("");
   const [location, setLocation] = useState("");
+  const [flatSize, setFlatSize] = useState(0);
 
   const postingHouse = async () => {
     const houseData = {
@@ -19,6 +20,7 @@ export default function PostHouse() {
       price: price,
       status: status,
       location: location,
+      flatSize: flatSize,
     };
     const newHouse = await fetch("http://localhost:3001/houses", {
       method: "POST",
@@ -61,7 +63,7 @@ export default function PostHouse() {
 
         <label htmlFor="images">Image</label>
         <input
-          type="file"
+          type="text"
           name="images"
           value={images}
           onChange={(e) => setImages(e.target.value)}
@@ -77,14 +79,23 @@ export default function PostHouse() {
         />
         <br />
 
-        {/* <label htmlFor="status">Status</label>
+        <label htmlFor="flatSize">Flat Size</label>
+        <input
+          type="number"
+          name="flatSize"
+          value={flatSize}
+          onChange={(e) => setFlatSize(e.target.value)}
+        />
+        <br />
+
+        <label htmlFor="status">Status</label>
         <input
           type="text"
           name="status"
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         />
-        <br /> */}
+        <br />
 
         <label htmlFor="location">District</label>
         <input

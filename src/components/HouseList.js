@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Badge } from "react-bootstrap";
+import { Container, Row, Col, Badge, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 export default function HouseList() {
   const [house, setHouse] = useState([]);
 
@@ -13,24 +14,36 @@ export default function HouseList() {
     fetchData();
   }, []);
   return (
-    <div>
-      <h1>House list</h1>
+    <div className="house-list">
+      <h1>Room & Apartment</h1>
+      <div className="below-h1"></div>
+      <p
+        style={{
+          textAlign: "center",
+          color: "#0e385d",
+          fontWeight: 600,
+          letterSpacing: 1,
+        }}
+      >
+        FIND YOUR ROOMS, FOR YOUR ABAILITY
+      </p>
       <Container>
         <Row>
-          {house.map((e) => {
+          {house.map((e, index) => {
             return (
               <Col lg={4}>
-                <House {...e} />
+                <House {...e} key={index} />
               </Col>
             );
           })}
         </Row>
       </Container>
+      <Button>All Apartments</Button>
     </div>
   );
 }
 
-const House = ({ title, images, location, status, price, typeRoom }) => {
+const House = ({ title, images, location, status, price, typeRoom, _id }) => {
   return (
     <div className="house-card">
       <div className="animation-img">
@@ -40,11 +53,18 @@ const House = ({ title, images, location, status, price, typeRoom }) => {
           <h3>{title}</h3>
           <div className="card-info-flex">
             <div>
-              <p>{typeRoom}</p>
+              <p>
+                <i className="fal fa-home-lg-alt"></i>
+                {typeRoom}
+              </p>
 
-              <p>{location}</p>
+              <p>
+                <i className="fal fa-map-marker-alt"></i>
+                {location}
+              </p>
             </div>
-            <p>{price}</p>
+            <Link to={"/houses/" + _id} className="stretched-link"></Link>
+            <p>${price}</p>
           </div>
         </div>
       </div>
