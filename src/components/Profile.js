@@ -1,13 +1,10 @@
 import React from "react";
 import { Row, Col, Button, Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { logout } from "../redux/action/userAction";
+
 export default function Profile(props) {
-  const dispatch = useDispatch();
   return (
     <Container>
       <div className="profile">
-        <button onClick={() => dispatch(logout())}>logout</button>
         <Row>
           <Col lg={3}>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"></img>

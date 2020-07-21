@@ -1,4 +1,5 @@
 const loginWithEmail = (email, password) => async (dispatch) => {
+  console.log("run ham");
   const res = await fetch(`http://localhost:3001/auth/login`, {
     method: "POST",
     headers: {
