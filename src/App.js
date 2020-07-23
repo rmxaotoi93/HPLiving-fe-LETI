@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "rheostat/initialize";
+import "rheostat/css/rheostat.css";
 import Footer from "./components/Footer";
 import Districts from "./components/Districts";
 import Banner from "./components/Banner";
@@ -49,7 +51,7 @@ function App() {
             <Footer />
           </div>
         </Route>
-        <Route exact path="/users">
+        <Route exact path="/users/:id">
           <Profile />
         </Route>
         <Route exact path="/houses/gallery">

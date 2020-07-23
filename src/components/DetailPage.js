@@ -7,17 +7,6 @@ export default function DetailPage() {
   let { houseId } = useParams();
   let [house, setHouse] = useState([]);
 
-  // const getSingle = async () => {
-  //   let data = await axios.get(`http://localhost:3001/houses/${houseId}`);
-  //   let result = await data.json();
-  //   console.log(result);
-  //   setHouse(result);
-  // };
-
-  // useEffect(() => {
-  //   getSingle();
-  // }, []);
-
   useEffect(() => {
     axios.get(`http://localhost:3001/houses/${houseId}`).then((res) => {
       console.log(res.data.data);
@@ -87,9 +76,7 @@ export default function DetailPage() {
               </div>
               <div className="room-info-2">
                 <Row>
-                  <h6>Flat Size: </h6>
-
-                  <h6>Create at: </h6>
+                  <h6>Flat Size: {house.flatSize}</h6>
                 </Row>
               </div>
 

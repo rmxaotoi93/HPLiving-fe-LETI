@@ -216,7 +216,10 @@ p{
   border-left: none;
   border-right: none;
  margin: 20px auto;
-  
+
+}
+.DefaultBackground_background__horizontal {
+  width: 100% !important;
   
 }
 .login-bg{
@@ -284,10 +287,18 @@ p{
 .badge-success{
   position: absolute;
   top: 8%;
-  left: 65%;
+  left: 70%;
+}
+.badge-danger{
+  position: absolute;
+  top: 8%;
+  left: 70%;
 }
 .house-card{
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  
 }
 .card-info {
   
@@ -303,6 +314,7 @@ p{
   text-align: center;
   color: #414141;
 }
+
 .animation-img img{
   border-radius: 10px;
   
@@ -470,8 +482,8 @@ iframe{
 }
 .detail-img img{
   
-  width: 320px;
-  height: 240px;
+  width: 603px;
+  height: 405px;
   border-radius: 10px;
   margin: 5px 5px 0 0;
 }

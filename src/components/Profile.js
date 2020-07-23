@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Button, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+export default function Profile() {
+  let { id } = useParams();
+  let [user, setUser] = useState([]);
 
-export default function Profile(props) {
+  useEffect(() => {
+    axios.get(`http://localhost:3001/users/me/${id}`).then((res) => {
+      console.log(res.data.data);
+      setUser(res.data.data);
+    });
+  }, []);
+
   return (
     <Container>
       <div className="profile">
         <Row>
           <Col lg={3}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"></img>
+            <img src={user.image}></img>
           </Col>
           <Col lg={9}>
-            <h2>Username</h2>
-            <h6>Email</h6>
+            <h2>Username: {user.name}</h2>
+            <h6>Email: {user.email}</h6>
           </Col>
         </Row>
         <div className="header-profile">

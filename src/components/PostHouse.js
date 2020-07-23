@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import axios from "axios";
 
 export default function PostHouse() {
   const [title, setTitle] = useState("");
@@ -12,28 +13,45 @@ export default function PostHouse() {
   const [flatSize, setFlatSize] = useState(0);
 
   const postingHouse = async () => {
-    const houseData = {
-      title: title,
-      description: description,
-      typeRoom: typeRoom,
-      images: images,
-      price: price,
-      status: status,
-      location: location,
-      flatSize: flatSize,
-    };
-    const newHouse = await fetch("http://localhost:3001/houses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(houseData),
-    });
     alert("create successful");
+    // const houseData = {
+    //   title: title,
+    //   description: description,
+    //   typeRoom: typeRoom,
+    //   images: images,
+    //   price: price,
+    //   status: status,
+    //   location: location,
+    //   flatSize: flatSize,
+    // };
+
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("typeRoom", typeRoom);
+    formData.append("price", price);
+    formData.append("status", status);
+    formData.append("location", location);
+    formData.append("flatSize", flatSize);
+    for (const key of Object.keys(images)) {
+      formData.append("images", images[key]);
+    }
+
+    const newHouse = await axios.post(
+      "http://localhost:3001/houses",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify(houseData),
+      }
+    );
+    console.log(newHouse);
   };
   return (
     <div className="post-house">
-      <form onSubmit={postingHouse}>
+      <form>
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -63,10 +81,10 @@ export default function PostHouse() {
 
         <label htmlFor="images">Image</label>
         <input
-          type="text"
+          type="file"
+          multiple
           name="images"
-          value={images}
-          onChange={(e) => setImages(e.target.value)}
+          onChange={(e) => setImages(e.target.files)}
         />
         <br />
 
@@ -105,7 +123,7 @@ export default function PostHouse() {
           onChange={(e) => setLocation(e.target.value)}
         />
         <br />
-        <Button type="submit">Post</Button>
+        <Button onClick={postingHouse}>Post</Button>
       </form>
     </div>
   );

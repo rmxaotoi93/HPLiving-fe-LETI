@@ -13,7 +13,7 @@ export default function Footer() {
         <Row>
           <Col lg={6}>
             <div>
-              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC871wKM6aoCLSV_pT3xBVsYzNGXaDh7Pw&q=121King+St,Melbourne+VIC+3000,Australia"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6383587749806!2d106.70567881428691!3d10.762329662397867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f480a0fb8c1%3A0x86c4b954ce9140dd!2sCoderSchool!5e0!3m2!1svi!2s!4v1595496847414!5m2!1svi!2s"></iframe>
             </div>
           </Col>
           <Col lg={6}>

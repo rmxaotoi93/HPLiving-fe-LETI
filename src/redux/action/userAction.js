@@ -11,6 +11,7 @@ const loginWithEmail = (email, password) => async (dispatch) => {
   const body = await res.json();
   console.log(body);
   localStorage.setItem("token", body.data.token);
+  localStorage.setItem("userId", body.data.user._id);
   dispatch({
     type: "LOGIN",
     payload: body.data.user,
@@ -37,11 +38,12 @@ const fetchUser = () => async (dispatch) => {
 const logout = () => async (dispatch) => {
   const res = await fetch(`http://localhost:3001/auth/logout`, {
     headers: {
-      authorization: `Bearer ${localStorage.getItem("token")}`,
+      authorization: `Bearer ${localStorage.getItem("token", "userId")}`,
     },
   });
   if (res.status === 204) {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     dispatch({ type: "LOGOUT" });
   }
 };

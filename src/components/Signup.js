@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-export default function Signup() {
-  const [name, setName] = useState();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
-  const handleSignup = async () => {
-    const houseData = {
-      name: name,
-      email: email,
-      password: password,
-    };
+import axios from "axios";
 
-    const newUser = await fetch("http://localhost:3001/users", {
-      method: "POST",
+export default function Signup() {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [images, setImages] = useState("");
+
+  const handleSignup = async () => {
+    // const userData = {
+    //   name: name,
+    //   email: email,
+    //   password: password,
+    //   images: images,
+    // };
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("password", password);
+    formData.append("email", email);
+
+    for (const key of Object.keys(images)) {
+      formData.append("images", images[key]);
+    }
+    const newUser = await axios.post("http://localhost:3001/users", formData, {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(houseData),
+      // body: JSON.stringify(userData),
     });
     alert("register successful");
     console.log("newuser", newUser);
@@ -30,20 +41,34 @@ export default function Signup() {
       <form onSubmit={handleSignup}>
         <div>
           <input
+            name="username"
             placeholder="username"
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div>
           <input
+            name="email"
+            value={email}
             placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
           <input
+            name="password"
+            value={password}
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="file"
+            name="images"
+            placeholder="Image"
+            onChange={(e) => setImages(e.target.files)}
           />
         </div>
         <Button type="submit">Create account</Button>
