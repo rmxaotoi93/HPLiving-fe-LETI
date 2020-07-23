@@ -490,6 +490,13 @@ iframe{
 .detail p{
   line-height: 30px;
 }
+.kep-login-facebook.metro{
+  margin-left: 200px !important;
+  margin-top: -50px !important;
+  width: 200px !important;
+  border-radius: 25px;
+  height: 50px;
+}
 .room-info{
   background-color: white;
   min-height: 610px;

@@ -24,12 +24,16 @@ export default function Signup() {
     for (const key of Object.keys(images)) {
       formData.append("images", images[key]);
     }
-    const newUser = await axios.post("http://localhost:3001/users", formData, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // body: JSON.stringify(userData),
-    });
+    const newUser = await axios.post(
+      process.env.REACT_APP_SERVER + "/users",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify(userData),
+      }
+    );
     alert("register successful");
     console.log("newuser", newUser);
   };

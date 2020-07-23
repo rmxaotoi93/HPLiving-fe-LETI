@@ -6,7 +6,9 @@ export default function Allgallery(props) {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await fetch("http://localhost:3001/houses/gallery");
+      const data = await fetch(
+        process.env.REACT_APP_SERVER + "/houses/gallery"
+      );
       const house = await data.json();
       console.log("img-galeery", house);
       console.log(house.data);

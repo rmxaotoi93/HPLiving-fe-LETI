@@ -8,10 +8,12 @@ export default function DetailPage() {
   let [house, setHouse] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/houses/${houseId}`).then((res) => {
-      console.log(res.data.data);
-      setHouse(res.data.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_SERVER}/houses/${houseId}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setHouse(res.data.data);
+      });
   }, []);
 
   if (!house) return <></>;

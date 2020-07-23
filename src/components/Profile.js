@@ -7,7 +7,7 @@ export default function Profile() {
   let [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/me/${id}`).then((res) => {
+    axios.get(`${process.env.REACT_APP_SERVER}/users/me/${id}`).then((res) => {
       console.log(res.data.data);
       setUser(res.data.data);
     });

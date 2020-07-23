@@ -7,7 +7,7 @@ export default function Banner() {
   // const [filterHouse, setFilterHouse] = useState([]);
 
   // useEffect(() => {
-  //   axios.get("http://localhost:3001/houses").then((res) => {
+  //   axios.get(process.env.REACT_APP_SERVER+"/houses").then((res) => {
   //     setHouses(res.data);
   //   });
   // }, []);
