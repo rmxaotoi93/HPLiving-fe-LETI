@@ -82,7 +82,6 @@ export default function PostHouse() {
         <label htmlFor="images">Image</label>
         <input
           type="text"
-          multiple
           name="images"
           onChange={(e) => setImages(e.target.value)}
         />
