@@ -23,8 +23,8 @@
     "rheostat": "^4.1.1"
   },
   "scripts": {
-    "start": "SET HTTPS=true&&react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
