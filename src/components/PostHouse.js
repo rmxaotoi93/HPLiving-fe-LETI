@@ -14,28 +14,28 @@ export default function PostHouse() {
 
   const postingHouse = async () => {
     alert("create successful");
-    // const houseData = {
-    //   title: title,
-    //   description: description,
-    //   typeRoom: typeRoom,
-    //   images: images,
-    //   price: price,
-    //   status: status,
-    //   location: location,
-    //   flatSize: flatSize,
-    // };
+    const houseData = {
+      title: title,
+      description: description,
+      typeRoom: typeRoom,
+      images: images,
+      price: price,
+      status: status,
+      location: location,
+      flatSize: flatSize,
+    };
 
-    var formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("typeRoom", typeRoom);
-    formData.append("price", price);
-    formData.append("status", status);
-    formData.append("location", location);
-    formData.append("flatSize", flatSize);
-    for (const key of Object.keys(images)) {
-      formData.append("images", images[key]);
-    }
+    // var formData = new FormData();
+    // formData.append("title", title);
+    // formData.append("description", description);
+    // formData.append("typeRoom", typeRoom);
+    // formData.append("price", price);
+    // formData.append("status", status);
+    // formData.append("location", location);
+    // formData.append("flatSize", flatSize);
+    // for (const key of Object.keys(images)) {
+    //   formData.append("images", images[key]);
+    // }
 
     const newHouse = await axios.post(
       process.env.REACT_APP_SERVER + "/houses",
@@ -81,10 +81,10 @@ export default function PostHouse() {
 
         <label htmlFor="images">Image</label>
         <input
-          type="file"
+          type="text"
           multiple
           name="images"
-          onChange={(e) => setImages(e.target.files)}
+          onChange={(e) => setImages(e.target.value)}
         />
         <br />
 
