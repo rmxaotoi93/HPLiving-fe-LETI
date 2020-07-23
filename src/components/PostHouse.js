@@ -79,13 +79,14 @@ export default function PostHouse() {
         />
         <br />
 
-        <label htmlFor="images">Image</label>
+        {/* <label htmlFor="images">Image</label>
         <input
           type="text"
           name="images"
+          value={images}
           onChange={(e) => setImages(e.target.value)}
         />
-        <br />
+        <br /> */}
 
         <label htmlFor="price">Price</label>
         <input
