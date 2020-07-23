@@ -43,7 +43,7 @@ export default function Login() {
   };
   const loginWithEmail = async (email, password) => {
     console.log("run ham");
-    const res = await fetch(`http://localhost:3001/auth/login`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

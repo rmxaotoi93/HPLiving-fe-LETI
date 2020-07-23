@@ -38,7 +38,7 @@ export default function PostHouse() {
     }
 
     const newHouse = await axios.post(
-      "http://localhost:3001/houses",
+      process.env.REACT_APP_SERVER + "/houses",
       formData,
       {
         headers: {

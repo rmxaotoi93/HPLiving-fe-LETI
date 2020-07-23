@@ -27,7 +27,7 @@ export default function Mavbar() {
   const handleShow2 = () => setShow2(true);
 
   const handleLogout = async () => {
-    const res = await fetch(`http://localhost:3001/auth/logout`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/logout`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token", "userId")}`,
       },

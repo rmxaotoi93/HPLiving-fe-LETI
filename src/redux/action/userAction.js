@@ -1,6 +1,6 @@
 const loginWithEmail = (email, password) => async (dispatch) => {
   console.log("run ham");
-  const res = await fetch(`http://localhost:3001/auth/login`, {
+  const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -22,7 +22,7 @@ const fetchUser = () => async (dispatch) => {
     dispatch({ type: "APP_LOADED" });
     return;
   }
-  const res = await fetch(`http://localhost:3001/auth/users/me`, {
+  const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/users/me`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -36,7 +36,7 @@ const fetchUser = () => async (dispatch) => {
   dispatch({ type: "APP_LOADED" });
 };
 const logout = () => async (dispatch) => {
-  const res = await fetch(`http://localhost:3001/auth/logout`, {
+  const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/logout`, {
     headers: {
       authorization: `Bearer ${localStorage.getItem("token", "userId")}`,
     },

@@ -10,7 +10,7 @@ export default function HouseList() {
   useEffect(() => {
     async function fetchData() {
       const data = await fetch(
-        `http://localhost:3001/houses?minPrice=${minPrice}&maxPrice=${maxPrice}`
+        `${process.env.REACT_APP_SERVER}/houses?minPrice=${minPrice}&maxPrice=${maxPrice}`
       );
       const house = await data.json();
       // console.log("house listt ", house.data);
