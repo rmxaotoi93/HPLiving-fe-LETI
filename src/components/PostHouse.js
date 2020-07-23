@@ -39,7 +39,7 @@ export default function PostHouse() {
 
     const newHouse = await axios.post(
       process.env.REACT_APP_SERVER + "/houses",
-      formData,
+      houseData,
       {
         headers: {
           "Content-Type": "application/json",

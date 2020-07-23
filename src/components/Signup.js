@@ -26,7 +26,7 @@ export default function Signup() {
     // }
     const newUser = await axios.post(
       process.env.REACT_APP_SERVER + "/users",
-      formData,
+      userData,
       {
         headers: {
           "Content-Type": "application/json",
