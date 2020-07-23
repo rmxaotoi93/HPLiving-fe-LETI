@@ -39,7 +39,7 @@ export default function PostHouse() {
 
     const newHouse = await axios.post(
       process.env.REACT_APP_SERVER + "/houses",
-      formData,
+      houseData,
       {
         headers: {
           "Content-Type": "application/json",
@@ -79,13 +79,14 @@ export default function PostHouse() {
         />
         <br />
 
-        <label htmlFor="images">Image</label>
+        {/* <label htmlFor="images">Image</label>
         <input
           type="text"
           name="images"
+          value={images}
           onChange={(e) => setImages(e.target.value)}
         />
-        <br />
+        <br /> */}
 
         <label htmlFor="price">Price</label>
         <input
