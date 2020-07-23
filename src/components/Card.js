@@ -17,7 +17,7 @@ export default function Card() {
                 <div className="card-info-flex">
                   <div>
                     <p>Type</p>
-                    <p>Area</p>
+
                     <p>Location</p>
                   </div>
                   <p>Price</p>
@@ -38,7 +38,6 @@ export default function Card() {
                 <div className="card-info-flex">
                   <div>
                     <p>Type</p>
-                    <p>Area</p>
                     <p>Location</p>
                   </div>
                   <p>Price</p>
@@ -59,7 +58,6 @@ export default function Card() {
                 <div className="card-info-flex">
                   <div>
                     <p>Type</p>
-                    <p>Area</p>
                     <p>Location</p>
                   </div>
                   <p>Price</p>

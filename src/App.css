@@ -1,6 +1,6 @@
 .App {
-  text-align: center;
-  background-color: #eed8c0;
+ 
+  padding-bottom: 1px;
 }
 
 .App-logo {
@@ -13,7 +13,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.nav-link a {
+  color: white;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -44,40 +46,278 @@
   animation: bounce;
   animation-duration: 2s; 
 }
+
 body{
   background-color: #eed8c0;
+}
+.nav-link a{
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif;
+}
+h1{
+  text-align: center;
+  font-size: 52px !important;
+  color: inherit;
+  position: relative;
+  font-weight: 900 !important;
+  letter-spacing: 1px;
+  color: #0e385d;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
 }
 h2{
   text-align: left ;
   margin-left: 100px;
   padding-bottom: 20px;
 }
-/* Banner */
+ h6{
+  font-size: 25px !important;
+}
+p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #4b4b4b;
+}
+/*============================================== Post House */
+.card-info h3{
+  font-family: "Playfair Display", serif;
+  margin: 10px 0 ;
+}
+.model-content{
+  width: 700px;
+  height: 500px;
+}
+.post-house input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.post-house .btn-primary{
+  margin: 20px ;
+
+}
+.modal-header{
+  border-bottom: none !important;
+}
+.modal-footer {
+  border-top: none
+}
+.house-list h1{
+  margin-bottom: 30px;
+
+}
+.below-h1{
+  width: 150px;
+  border-top: 1px solid #4b4b4b;
+  margin: 10px auto;
+}
+.fa-map-marker-alt{
+  margin-right: 10px;
+  font-weight: 600;
+}
+.fa-home-lg-alt{
+  margin-right: 10px;
+  font-weight: 500;
+}
+.house-list .btn-primary{
+  display: flex;
+  border: none;
+  background-color: #0e385d;
+  margin: 30px auto 80px auto;
+  border-radius: 26px;
+  padding: 10px 60px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.house-list .btn-primary:hover{
+  background-color: #21b360;
+}
+/*============================================== Gallery */
+.gallery{
+  background-color: white;
+  padding: 80px 0;
+  
+}
+.gallery img{
+  width: 247px;
+  height: 276px;
+  margin: 3px 5px 3px 0;
+}
+.gallery h1{
+  margin-top: 30px;
+  font-weight: 900;
+  text-align: left;
+  
+}
+.gallery h6{
+  padding: 15px 0;
+  margin: 5px 0;
+  
+  font-weight: 700 !important;
+  color: #525252;
+}
+.gallery p{
+  
+  line-height: 35px;
+}
+.gallery .btn-primary{
+  background-color: #0e385d;
+  padding: 15px 45px;
+  border-radius: 26px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  margin: auto;
+ font-family: 'Poppins', sans-serif;
+ letter-spacing: 1px;
+ border: none;
+}
+.gallery .btn-primary:hover{
+  background-color: #21b360;
+  }
+.all-gallery h1{
+  margin-bottom: 50px;
+}
+  .all-gallery img{
+    width: 275px;
+    height: 220px;
+  }
+/*============================================== Login */
+.login{
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  margin: 30px auto;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+.login h3{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: #0e385d;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.login input{
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  
+  border-top: none;
+  border-left: none;
+  border-right: none;
+ margin: 20px auto;
+
+}
+.DefaultBackground_background__horizontal {
+  width: 100% !important;
+  
+}
+.login-bg{
+  background: linear-gradient(to right, #21b75f 0%,#31386e 100%);
+  padding-bottom: 121px;
+  margin-top: -100px;
+  padding-top: 50px;
+}
+.login .btn-primary{
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin: 35px auto;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 35px;
+  background-color: #0e385d;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.login .btn-primary:hover{
+  background-color: #21b360;
+}
+/*============================================== Sign up */
+.signup h3{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.signup input{
+
+  width: 300px;
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 80px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.signup .btn-primary{
+  width: 300px;
+  height: 50px;
+  margin: 30px;
+  border-radius: 25px;
+  margin-left: 80px;
+  margin-top: 40px;
+}
+/*============================================== Banner */
 
 .banner{
-  background-image: url("https://i.pinimg.com/originals/1a/3c/12/1a3c12fb3e9bee6ef997cf294a2e6214.jpg");
-  min-height: 100px;
+  background-image: url("https://www.homeanddecor.com.my/sites/default/files/imagecache/hnd_revamp_1x1_large/blog/gallery_article/gallery_images/43537-homeswideopenspaces2019em_10.jpg");
+  background-size: cover;
+  min-height: 200px;
   width: 100%;
-  padding-bottom: 300px;
-  margin-bottom: 80px;
+  height: 600px;
+  
+  background-position: 70% 70%;
 }
-.card{
-  margin-bottom: 80px;
-  background-color: #eed8c0 !important; 
-  border: none;
+.badge-success{
+  position: absolute;
+  top: 8%;
+  left: 70%;
+}
+.badge-danger{
+  position: absolute;
+  top: 8%;
+  left: 70%;
+}
+.house-card{
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  
 }
 .card-info {
   
-  border: 1px solid #484848;
+  border: 1px solid #9d9d9d;
   width: 300px;
   min-height: 100px;
   justify-content: center;
-  margin: 5px 0 0 26px ;
+  margin: 5px 0 0 0 ;
   border-radius: 10px;
  
 }
+.card-info h3{
+  text-align: center;
+  color: #414141;
+}
+
 .animation-img img{
   border-radius: 10px;
+  
 }
 .card-info-flex{
   display: flex;
@@ -86,7 +326,7 @@ h2{
 }
 
 .banner h1{
-  padding-top: 300px;
+  padding-top: 250px;
   color: #1b87af;
 }
 .banner input{
@@ -94,21 +334,37 @@ h2{
   border: none;
   width: 500px;
   height: 50px;
-  
+  display: block;
+  margin: 30px auto;
 }
 .fa-search{
  font-size: larger;
   margin-left: -50px;
 }
 
-/* District */
+/*============================================== District */
+.district{
+  background-color: white;
+  padding: 50px 0;
+  margin-bottom: 100px;
+  padding: 100px 0;
+}
 .district h2{
-  color: #209ecc;
+  color: #0e385d;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+ 
 }
 .popular p{
   margin: -30px  0 0 10px ;
-
+  
   color: white;
+}
+.popular img{
+  padding-bottom: 1px;
+}
+.popular {
+  display: flex !important;
 }
 .district{
   
@@ -117,41 +373,239 @@ h2{
 .district img{
   border-radius: 5px;
 }
-/* Footer */
-
-.footer{
-  background-color: black;
-  min-height: 100px;
-  text-align: left;
-  color: #7c7e83;
-  padding-bottom: 100px;
-  
+/*============================================== Footer */
+.footer h1{
+  padding-top: 50px;
+  margin: 20px 0;
 }
 .footer p{
-  font-size: 14px;
+  text-align: center;
+  color: #0e385d;
+  font-weight: 500;
+  padding-bottom: 50px;
+}
+iframe{
+  border: none;
+  width: 100%;
+  height: 300px;
+}
+.fa-address-book{
+  font-size: 30px;
+  color: #0e385d;
+}
+.fa-envelope{
+  font-size: 30px;
+  color: #0e385d;
+}
+.fa-phone-square{
+  font-size: 30px;
+  color: #0e385d;
+}
+.fa-user-circle{
+  font-size: 30px;
+  color: #0e385d;
+}
+.flex-footer{
+  display: flex;
+}
+.flex-footer h5{
+  font-size: 24px;
+  margin-left: 30px;
+  font-family: 'Poppins', sans-serif;
+  color: #0e385d;
+  font-weight: 600;
+}
+.footer-info p{
   text-align: left;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #414141;
+}
+.fa-facebook-f{
+  font-size: 24px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: #414141;
+}
+.fa-facebook-f:hover{
+  color: #1c74c2;
+}
+.fa-twitter{
+  font-size: 24px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: #414141;
+}
+.fa-twitter:hover{
+  color: #1c74c2;
+ }
+.fa-instagram{
+  font-size: 24px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: #414141;
+}
+.fa-instagram:hover{
+  color: #1c74c2;
+ }
+.fa-google{
+  font-size: 24px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: #414141;
+}
+.fa-google:hover{
+  color: #1c74c2;
+ }
+ .footer-end{
+   display: flex;
+   border-top: 1px solid #4b4b4b;
+   width: 80%;
+  margin: 10px auto;
+  padding-top: 30px;
+  justify-content: center;
+ }
+ 
+ .footer-end p{
+   text-align: center;
+   justify-content: center;
+  margin-right: 5px;
+ }
+/*============================================== Detail */
+.detail{
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+.detail-img{
+  display: flex;
+}
+.detail-img img{
+  
+  width: 603px;
+  height: 405px;
+  border-radius: 10px;
+  margin: 5px 5px 0 0;
+}
+.detail p{
+  line-height: 30px;
+}
+.room-info{
+  background-color: white;
+  min-height: 610px;
+  border-radius: 10px;
+  border: 1px solid #E4E4E4;
+}
+.room-info-1{
+  margin-top: 30px;
+  display: flex;
+  
+}
+.room-info-1 h6{
+  margin-left: 35px;
+  font-family: 'Poppins', sans-serif;
+}
+.room-info-2 h6{
+  margin-left: 35px;
+  font-family: 'Poppins', sans-serif;
+}
+.room-info-2{
+  margin-top: 30px;
+  display: flex;
+  
+}
+.room-info p{
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.brief-info{
+  border: 1px solid #E4E4E4;
+  margin-top: 10px;
+  width: 95%;
+  background-color: white;
+  min-height: 130px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+.brief-info h3{
+  font-family: 'Poppins', sans-serif;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+.facility {
+  display: flex;
+  
+}
+
+.facility p{
+  width: 200px;
+  margin: 0 15px;
 
 }
-.contact-footer{
-  margin-top: 30px;
+.facility i{
+  margin: 10px 20px;
 }
-.contact-footer i{
-  margin-right: 20px;
+input:focus {
+  outline: none;
 }
-.gallery-footer{
-  margin-top: 30px;
+/*============================================== Profile */
+.profile{
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  overflow: hidden; 
 }
-.subscribe-footer{
-  margin-top: 30px;
+.profile img{
+  width: 150px;
+  height: 150px;
+  margin: 50px 0 0 80px
 }
-.subscribe-footer .btn-primary {
-  margin-top: 15px;
+.profile-title{
+  margin-left: 80px;
+  margin-top: 50px;
 }
-.subscribe-footer input{
-  border-radius: 5px;
-  height: 50px;
+
+.profile-title input{
+  width: 500px;
+  height: 40px;
+  
 }
-.gallery-footer img{
-  margin-left: 15px;
-  margin-top: 15px;
+.profile .btn-primary{
+  display: flex;
+  border: none;
+  background-color: #0e385d;
+  margin: 50px auto;
+  border-radius: 26px;
+  padding: 10px 60px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.profile .btn-primary:hover{
+  background-color:  #21b360;
+}
+.header-profile{
+ padding-left: 80px;
+ padding-bottom: 30px;
+  margin-top: 50px;
+  border-bottom: 1px solid #E4E4E4;
+  
+}
+.profile h2{
+  margin-top: 60px;
+}
+.profile h6{
+  margin-left: 100px;
+}
+/*============================================== All-Gallery */
+.all-gallery{
+  margin: 100px 0;
+}
+.all-gallery h1{
+ font-weight: bold;
+  
+}
+.all-gallery img{
+  margin: 10px auto;
+  border-radius: 16px;
 }
