@@ -10,20 +10,20 @@ export default function Signup() {
   const [images, setImages] = useState("");
 
   const handleSignup = async () => {
-    // const userData = {
-    //   name: name,
-    //   email: email,
-    //   password: password,
-    //   images: images,
-    // };
-    var formData = new FormData();
-    formData.append("name", name);
-    formData.append("password", password);
-    formData.append("email", email);
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+      images: images,
+    };
+    // var formData = new FormData();
+    // formData.append("name", name);
+    // formData.append("password", password);
+    // formData.append("email", email);
 
-    for (const key of Object.keys(images)) {
-      formData.append("images", images[key]);
-    }
+    // for (const key of Object.keys(images)) {
+    //   formData.append("images", images[key]);
+    // }
     const newUser = await axios.post(
       process.env.REACT_APP_SERVER + "/users",
       formData,
@@ -63,16 +63,17 @@ export default function Signup() {
           <input
             name="password"
             value={password}
+            type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
           <input
-            type="file"
+            type="text"
             name="images"
             placeholder="Image"
-            onChange={(e) => setImages(e.target.files)}
+            onChange={(e) => setImages(e.target.value)}
           />
         </div>
         <Button type="submit">Create account</Button>
