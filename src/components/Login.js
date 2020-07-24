@@ -15,7 +15,7 @@ export default function Login() {
     if (data && data.accessToken) {
       try {
         const res = await axios.get(
-          `http:localhost:3001/auth/facebook/login?token=${data.accessToken}`
+          `${process.env.REACT_APP_SERVER}/auth/facebook/login?token=${data.accessToken}`
         );
         const { user, token } = res.data.data;
         console.log(token);
