@@ -31,7 +31,7 @@ export default function Profile() {
       <div className="profile">
         <Row>
           <Col lg={3}>
-            <img src={user.image}></img>
+            <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/110261687_906455873174186_4253354418348818513_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=6Me2vHzlLvUAX-51Np5&_nc_ht=scontent.fsgn3-1.fna&oh=4452e4fcac8b4e837af02c11f9f8bd92&oe=5F40DDA0"></img>
           </Col>
           <Col lg={9}>
             <h2>Username: {user.name}</h2>
