@@ -22,14 +22,19 @@ const fetchUser = () => async (dispatch) => {
     dispatch({ type: "APP_LOADED" });
     return;
   }
-  const res = await fetch(`${process.env.REACT_APP_SERVER}/auth/users/me`, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-    // body: JSON.stringify({ email, password }),
-  });
+  const res = await fetch(
+    `${process.env.REACT_APP_SERVER}/users/me/${localStorage.getItem(
+      "userId"
+    )}`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      // body: JSON.stringify({ email, password }),
+    }
+  );
   const body = await res.json();
 
   dispatch({ type: "LOGIN", payload: body.data });
