@@ -88,7 +88,7 @@ export default function Mavbar() {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/" onClick={handleShow2}>
+                <Link to="/login" onClick={handleShow2}>
                   Signup
                 </Link>
               </Nav.Link>
