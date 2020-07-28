@@ -1,5 +1,5 @@
 .App {
- 
+  
   padding-bottom: 1px;
 }
 
@@ -47,9 +47,6 @@
   animation-duration: 2s; 
 }
 
-body{
-  background-color: #eed8c0;
-}
 .nav-link a{
   text-decoration: none !important;
   font-family: 'Poppins', sans-serif;
