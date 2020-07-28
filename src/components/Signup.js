@@ -9,7 +9,8 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [images, setImages] = useState("");
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
     const userData = {
       name: name,
       email: email,
