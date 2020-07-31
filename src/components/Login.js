@@ -6,8 +6,8 @@ import { useHistory } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 import axios from "axios";
 export default function Login() {
-  const [email, setEmail] = useState("rmxaotoi999");
-  const [password, setPassword] = useState("123123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [token, setToken] = useState("");
   const history = useHistory();
 

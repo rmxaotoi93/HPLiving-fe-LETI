@@ -25,7 +25,7 @@ export default function Signup() {
     // for (const key of Object.keys(images)) {
     //   formData.append("images", images[key]);
     // }
-    console.log("12312312312321");
+
     const newUser = await axios.post(
       process.env.REACT_APP_SERVER + "/users",
       userData,
