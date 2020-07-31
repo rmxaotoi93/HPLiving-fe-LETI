@@ -91,6 +91,13 @@ p{
   margin-left: 10px;
   margin-top: 10px;
 }
+.handle-btn {
+  display: flex;
+  justify-content: center;
+}
+.handle-btn .btn-danger{
+  margin-left: 30px;
+}
 .post-house .btn-primary{
   margin: 20px ;
 
@@ -612,4 +619,52 @@ input:focus {
 .all-gallery img{
   margin: 10px auto;
   border-radius: 16px;
+}
+/*============================================== Review */
+.review {
+  margin-top: 50px;
+}
+.review h4{
+  margin: 30px;
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+}
+.review textarea{
+  border-radius: 10px;
+  border: 1px solid #E4E4E4;
+}
+.each-review{
+  display: flex;
+}
+.each-review {
+  margin: 30px;
+ 
+}
+.each-review p{
+  margin-left: 30px;
+  padding-top: 5px;
+}
+.review-flex{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #E4E4E4;
+  margin-left: 20px;
+  width: 70%;
+  min-height: 60px;
+  border-radius: 10px;
+}
+.review-flex i{
+  margin-top: 10px;
+  text-decoration: none;
+}
+.each-review textarea{
+  font-family: 'Poppins', sans-serif;
+  float: right;
+  margin-left: 20px;
+}
+textarea:focus{
+  outline: none;
+}
+.each-review .btn-primary{
+  margin-left: 10px;
 }

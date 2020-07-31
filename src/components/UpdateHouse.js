@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function PostHouse({ handleClose }) {
-  const history = useHistory();
+export default function UpdateHouse({ houseId, handleClose }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [typeRoom, setTypeRoom] = useState("");
@@ -14,9 +13,23 @@ export default function PostHouse({ handleClose }) {
   const [location, setLocation] = useState("");
   const [flatSize, setFlatSize] = useState(0);
 
-  const postingHouse = async () => {
-    alert("create successful");
-    const houseData = {
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER}/houses/${houseId}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setTitle(res.data.data.title);
+        setDescription(res.data.data.description);
+        setTypeRoom(res.data.data.typeRoom);
+        setImages(res.data.data.images);
+        setPrice(res.data.data.price);
+        setStatus(res.data.data.status);
+        setLocation(res.data.data.location);
+        setFlatSize(res.data.data.flatSize);
+      });
+  }, []);
+  const updateHouse = async () => {
+    const oldData = {
       title: title,
       description: description,
       typeRoom: typeRoom,
@@ -26,35 +39,23 @@ export default function PostHouse({ handleClose }) {
       location: location,
       flatSize: flatSize,
     };
-
-    // var formData = new FormData();
-    // formData.append("title", title);
-    // formData.append("description", description);
-    // formData.append("typeRoom", typeRoom);
-    // formData.append("price", price);
-    // formData.append("status", status);
-    // formData.append("location", location);
-    // formData.append("flatSize", flatSize);
-    // for (const key of Object.keys(images)) {
-    //   formData.append("images", images[key]);
-    // }
     const token = localStorage.getItem("token");
-    const newHouse = await axios.post(
-      process.env.REACT_APP_SERVER + "/houses",
-      houseData,
+    console.log(houseId);
+    const updateHouse = await axios.put(
+      process.env.REACT_APP_SERVER + `/houses/${houseId}`,
+      oldData,
+
       {
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
         // body: JSON.stringify(houseData),
       }
     );
-
+    console.log(updateHouse);
     handleClose();
-    history.replace("/");
-
-    console.log(newHouse);
+    window.location.reload();
   };
   return (
     <div className="post-house">
@@ -130,7 +131,7 @@ export default function PostHouse({ handleClose }) {
           onChange={(e) => setLocation(e.target.value)}
         />
         <br />
-        <Button onClick={postingHouse}>Post</Button>
+        <Button onClick={updateHouse}>Update</Button>
       </form>
     </div>
   );

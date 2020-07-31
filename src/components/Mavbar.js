@@ -111,7 +111,7 @@ export default function Mavbar() {
           <Modal.Title>Posting Posting</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <PostHouse />
+          <PostHouse handleClose={handleClose} />
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>

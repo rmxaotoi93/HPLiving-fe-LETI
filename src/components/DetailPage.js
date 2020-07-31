@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Review from "./Review";
+import UpdateHouse from "./UpdateHouse";
 
 export default function DetailPage() {
   let { houseId } = useParams();
   let [house, setHouse] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     axios
@@ -24,7 +30,7 @@ export default function DetailPage() {
           <Col lg={7} md={7} sm={7}>
             <div className="detail-img">
               {house.images ? (
-                house.images.map((e) => {
+                house.images.map((e, index) => {
                   return (
                     <div className="detail-img">
                       <img src={e} alt="img not found" />
@@ -78,17 +84,30 @@ export default function DetailPage() {
               </div>
               <div className="room-info-2">
                 <Row>
-                  <h6>Flat Size: {house.flatSize}</h6>
+                  <h6>Contact: 0224373924</h6>
                 </Row>
               </div>
 
               <p>Description: {house.description}</p>
+              <div className="handle-btn">
+                <Button className="btn btn-success" onClick={handleShow}>
+                  Update
+                </Button>
+              </div>
             </div>
           </Col>
         </Row>
-        <Row>
-          <div></div>
-        </Row>
+        <Review />
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Update House</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <UpdateHouse houseId={houseId} handleClose={handleClose} />
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
+        </Modal>
       </Container>
     </div>
   );
